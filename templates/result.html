@@ -1,12 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Result</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var taskId = "{{ task_id }}";
+            var interval = setInterval(function(){
+                $.getJSON('/status/' + taskId, function(data){
+                    if(data.state == 'SUCCESS'){
+                        $('#result').text('Result: ' + data.status);
+                        clearInterval(interval);
+                    } else {
+                        $('#result').text('Status: ' + data.status);
+                    }
+                });
+            }, 2000); // Poll every 2 seconds
+        });
+    </script>
 </head>
 <body>
-    <h1>Result</h1>
-    <p>{{ result }}</p>
+    <h1>Task Result</h1>
+    <div id="result">Waiting for result...</div>
 </body>
 </html>

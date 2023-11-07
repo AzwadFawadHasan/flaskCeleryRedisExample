@@ -14,3 +14,5 @@ using the command pip install flask celery
 Make sure to create a redis account and then use that account's password and endpoint
 using the command py app.py
 then in a seperate terminal run the command celery -A app.celery worker --loglevel=info
+or use
+ celery -A app.celery worker --loglevel=info --pool=solo
