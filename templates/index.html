@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Two Numbers</title>
+</head>
+<body>
+    <h1>Enter Two Numbers to Add</h1>
+    <form method="post">
+        <input type="text" name="x" placeholder="Enter first number" required>
+        <input type="text" name="y" placeholder="Enter second number" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if task_id %}
+        <p>Your task is submitted. Click the link below to see the result:</p>
+        <a href="{{ url_for('result', task_id=task_id) }}" target="_blank">{{ url_for('result', task_id=task_id, _external=True) }}</a>
+    {% endif %}
+</body>
+</html>
