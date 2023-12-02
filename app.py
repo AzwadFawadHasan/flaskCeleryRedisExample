@@ -8,10 +8,9 @@ app.secret_key = 'your_secret_key'
 
 
 # Configure Celery to use Redis
-#app.config['CELERY_BROKER_URL'] = 'redis://:Zf61JQ5ffQ0nVBE7Vk8RbJZIFHHAeZcr@redis-16168.c8.us-east-1-2.ec2.cloud.redislabs.com:16168'
-#app.config['CELERY_RESULT_BACKEND'] = 'redis://:Zf61JQ5ffQ0nVBE7Vk8RbJZIFHHAeZcr@redis-16168.c8.us-east-1-2.ec2.cloud.redislabs.com:16168'
-app.config['broker_url'] = 'redis://:Zf61JQ5ffQ0nVBE7Vk8RbJZIFHHAeZcr@redis-16168.c8.us-east-1-2.ec2.cloud.redislabs.com:16168'
-app.config['result_backend'] = 'redis://:Zf61JQ5ffQ0nVBE7Vk8RbJZIFHHAeZcr@redis-16168.c8.us-east-1-2.ec2.cloud.redislabs.com:16168'
+
+app.config['broker_url'] = 'your broker url'
+app.config['result_backend'] = 'add the same broker url'
 
 
 # Initialize Celery
